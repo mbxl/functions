@@ -1,0 +1,14 @@
+#+TITLE: Bash functions
+
+* Batch URL Downloader
+Downloads files in batches when the URL increments by 1 somewhere in the file name between files.
+#+begin_src shell
+  #!/usr/bin/env bash
+  counter=1
+  while [ $counter -le 8 ]
+  do
+      wget -c "http://ftpmirror.your.org/pub/misc/sonniss2019/Sonniss.com%20-%20GDC%202019%20-%20Game%20Audio%20Bundle%20Part%20${counter}of8.zip"
+      ((counter++))
+  done
+  echo All done
+#+end_src
