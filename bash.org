@@ -12,3 +12,24 @@ Downloads files in batches when the URL increments by 1 somewhere in the file na
   done
   echo All done
 #+end_src
+
+* Unzipper
+Unzips all zip files in directory
+#+begin_src shell
+  #!/usr/bin/env bash
+  for z in *.zip;
+  do unzip $z;
+  done
+  echo All done
+#+end_src
+* Backup Script
+Backs up specified folders to another directory. Change $USER before using.
+#+begin_src shell
+  #!/usr/bin/env bash
+  LIST="folder1 folder2 folder3"
+  for d in $LIST; do
+      rsync -ar --delete-delay /home/$USER/$d /backup/directory
+      echo Backed up $d
+  done
+  echo All done
+#+end_src
