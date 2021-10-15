@@ -33,3 +33,13 @@ Backs up specified folders to another directory. Change $USER before using.
   done
   echo All done
 #+end_src
+
+* Git Remote Push Config Script
+This script adds github and gitlab as remote repos.
+#+begin_src shell
+  #!/usr/bin/env bash
+  REPO="functions"
+  git remote add all git@github.com:mbxl/$REPO.git
+  git remote set-url --add --push all git@github.com:mbxl/$REPO.git
+  git remote set-url --add --push all git@gitlab.com:mbxl/$REPO.git
+#+end_src
